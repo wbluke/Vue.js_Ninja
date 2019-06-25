@@ -16,6 +16,9 @@ new Vue({
             // console.log(event); // event의 모든 속성을 console에서 볼 수 있다. 
             this.x = event.offsetX;
             this.y = event.offsetY;
+        },
+        click: function() {
+            alert('You Clicked Me!');
         }
     }
 });
