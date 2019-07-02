@@ -6,19 +6,22 @@
 </template>
 
 <script>
-import Ninjas from './components/Ninjas.vue'
+import Ninjas from "./components/Ninjas.vue";
 
 export default {
   components: {
-    'ninjas': Ninjas
+    ninjas: Ninjas
   },
   data() {
     return {
-      title: 'Ninja App'
-    }
+      title: "Ninja App"
+    };
   }
-}
+};
 </script>
 
 <style scoped>
+h1 {
+  color: purple;
+}
 </style>
