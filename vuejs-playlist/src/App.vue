@@ -1,19 +1,24 @@
 <template>
-  <div id="app">
-    <HelloWorld/>
+  <div>
+    <h1>{{ title }}</h1>
+    <ninjas></ninjas>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Ninjas from './components/Ninjas.vue'
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    'ninjas': Ninjas
+  },
+  data() {
+    return {
+      title: 'Ninja App'
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 </style>
