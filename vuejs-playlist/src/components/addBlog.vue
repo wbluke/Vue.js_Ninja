@@ -8,13 +8,13 @@
       <textarea v-model.lazy="blog.content"></textarea>
       <div id="checkboxes">
         <label>Ninjas</label>
-        <input type="checkbox" value="ninjas" v-model="blog.categories"/>
+        <input type="checkbox" value="ninjas" v-model="blog.categories" />
         <label>Wizards</label>
-        <input type="checkbox" value="wizards" v-model="blog.categories"/>
+        <input type="checkbox" value="wizards" v-model="blog.categories" />
         <label>Mario</label>
-        <input type="checkbox" value="mario" v-model="blog.categories"/>
+        <input type="checkbox" value="mario" v-model="blog.categories" />
         <label>Cheese</label>
-        <input type="checkbox" value="cheese" v-model="blog.categories"/>
+        <input type="checkbox" value="cheese" v-model="blog.categories" />
       </div>
       <label>Author:</label>
       <select v-model="blog.author">
@@ -49,20 +49,18 @@ export default {
         categories: [],
         author: ""
       },
-      authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator'],
+      authors: ["The Net Ninja", "The Angular Avenger", "The Vue Vindicator"],
       submitted: false
     };
   },
   methods: {
     post: function() {
-      this.$http.post('https://jsonplaceholder.typicode.com/posts', {
-        title: this.blog.title,
-        body: this.blog.content,
-        userId: 1
-      }).then(function(data) {
-        console.log(data);
-        this.submitted = true;
-      });
+      this.$http
+        .post("https://vue-playlist-XXXXX.firebaseio.com/posts.json", this.blog)
+        .then(function(data) {
+          console.log(data);
+          this.submitted = true;
+        });
     }
   }
 };
